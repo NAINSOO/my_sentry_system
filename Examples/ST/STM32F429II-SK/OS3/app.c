@@ -396,7 +396,7 @@ static void AppTask_jodo(void *p_arg)
 	char str[10];
 
 
-    while (isNomalState) {                                          /* Task body, always written as an infinite loop.       */
+    while (DEF_TRUE) {                                          /* Task body, always written as an infinite loop.       */
     	u16 jodo = ADC1->DR;
 
     	sprintf(str,"%d %d\r\n",jodo,isNight);
@@ -437,7 +437,7 @@ static void AppTask_sori(void *p_arg)
     OS_ERR  err;
 	send_string("sori task start\r\n");
 
-    while (isNomalState) {                                          /* Task body, always written as an infinite loop.       */
+    while (DEF_TRUE) {                                          /* Task body, always written as an infinite loop.       */
     	u8 sori = GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_2);
 
     	if(sori){
